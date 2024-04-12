@@ -1,0 +1,17 @@
+.profile-name span {
+  display: block;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+.timeframe-toggle {
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+
+.timeframe-toggle:hover {
+  cursor: pointer;
+}
