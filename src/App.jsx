@@ -22,8 +22,14 @@ function App() {
 
   return (
     <>
-      <Menu setTimeframes={setTimeframes} />
-      {tasks && <TaskCards timeframe={timeframes} task={tasks} />}
+      <main className="dashboard">
+        <Menu setTimeframes={setTimeframes}  timeframe={timeframes}/>
+        {tasks && <TaskCards timeframe={timeframes} tasks={tasks} />}
+      </main>
+      <footer className="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a target="blank" href="https://www.frontendmentor.io/profile/Markered">Markered</a>.
+      </footer>
     </>
   );
 }

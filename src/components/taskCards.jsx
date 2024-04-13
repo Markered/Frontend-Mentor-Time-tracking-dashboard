@@ -1,32 +1,45 @@
-const TaskCards = ({ timeframe, task }) => {
+import "./taskCards.css";
+const TaskCards = ({ timeframe, tasks }) => {
   return (
-    <ul>
-      {task.map((task, index) => {
+    <>
+      {tasks.map((task, index) => {
+        const normalizedTaskName = task.title
+          .replace(/\s+/g, "-")
+          .toLowerCase();
         return (
-          <li  key={index + 1}>
-            <article>
-              <img src={`../../images/icon-${task.title.replace(/\s+/g, '-')}.svg`} alt="" />
-              <div>
-                <p>{task.title}</p>
-                <h2 className="task-">
-                  {task.timeframes[timeframe].current}hrs
-                  <span>
-                    {timeframe == "daily"
-                      ? "Yesterday"
-                      : timeframe == "weekly"
-                      ? "Last Week"
-                      : timeframe == "monthly"
-                      ? "Last Month"
-                      : ""}
-                    - {task.timeframes[timeframe].previous}hrs
-                  </span>
-                </h2>
-              </div>
-            </article>
-          </li>
+          <article
+            key={index + 1}
+            className="task-card"
+            style={{ backgroundColor: `var(--${normalizedTaskName}` }}
+          >
+            <img
+              className="task-icon"
+              src={`../../images/icon-${task.title.replace(/\s+/g, "-")}.svg`}
+              alt=""
+            />
+            <div className="task-info">
+              <header className="task-header">
+                <h2 className="task-title">{task.title}</h2>
+                <img src="../../images/icon-ellipsis.svg" alt="more-icon" />
+              </header>
+              <span className="time">
+                {task.timeframes[timeframe].current}hrs
+                <p className="previous-time">
+                  {timeframe == "daily"
+                    ? "Yesterday"
+                    : timeframe == "weekly"
+                    ? "Last Week"
+                    : timeframe == "monthly"
+                    ? "Last Month"
+                    : ""}{" "}
+                  - {task.timeframes[timeframe].previous}hrs
+                </p>
+              </span>
+            </div>
+          </article>
         );
       })}
-    </ul>
+    </>
   );
 };
 

@@ -1,21 +1,46 @@
-import "./menu.css"
+import "./menu.css";
 
-const Menu = ({ setTimeframes }) => {
+const Menu = ({ setTimeframes, timeframe }) => {
   return (
-    <article>
-      <div>
-        <img src="" alt="" />
-        
-        <h1 className="profile-name">
-          <span>Report for</span> Jeremy Robson
-        </h1>
-      </div>
+    <aside className="menu">
+      <figure className="profile-card">
+        <img src="../../images/image-jeremy.png" alt="profile-picture" />
+        <figcaption>
+          <h1 className="profile-name">
+            <span>Report for</span>
+            Jeremy Robson
+          </h1>
+        </figcaption>
+      </figure>
 
-      <button className="timeframe-toggle" onClick={() => setTimeframes("daily")}>Daily</button>
-      <button className="timeframe-toggle" onClick={() => setTimeframes("weekly")}>Weekly</button>
-      <button className="timeframe-toggle" onClick={() => setTimeframes("monthly")}>Monthly</button>
-    </article>
+      <section>
+        <button
+          className={`timeframe-toggle ${timeframe === 'daily' ? 'active' : ''}`}
+          onClick={() => {
+            setTimeframes("daily");
+          }}
+        >
+          Daily
+        </button>
+        <button
+          className={`timeframe-toggle ${timeframe === 'weekly' ? 'active' : ''}`}
+          onClick={() => {
+            setTimeframes("weekly");
+          }}
+        >
+          Weekly
+        </button>
+        <button
+          className={`timeframe-toggle ${timeframe === 'monthly' ? 'active' : ''} `}
+          onClick={() => {
+            setTimeframes("monthly");
+          }}
+        >
+          Monthly
+        </button>
+      </section>
+    </aside>
   );
-}
+};
 
 export default Menu;
