@@ -3,10 +3,40 @@
 
 .dashboard {
   height: 500px;
-  width: clamp(320px, 80%, 1200px);
+  width: clamp(320px, 90%, 1200px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   margin-bottom: 10px;
   gap: 20px ;
+}
+
+@media screen and (max-width: 1000px) {
+  .dashboard {
+    height: 600px;
+    width: 90%;
+    gap: 20px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .dashboard {
+    height: 600px;
+    width: 90%;
+    gap: 20px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard {
+    height: auto;
+    width: 90%;
+    gap: 20px;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,5 +1,5 @@
 .task-card {
-  height: 100%;
+  height: auto;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -34,17 +34,36 @@
 .task-title {
   font-size: 1rem;
   font-weight: 500;
+  display: flex;
 }
 .time {
   font-weight: 300;
   display: flex;
   flex-direction: column;
   height: 70%;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 3rem;
 }
 .previous-time {
   display: block;
   font-size: .8rem;
   color: var(--desaturated-blue);
+}
+
+@media screen and (max-width: 1000px) {
+  .time {
+    flex-direction: row;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+
+  .previous-time {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .task-card {
+    height: 150px;
+  }
 }
