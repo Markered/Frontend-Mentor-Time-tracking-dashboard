@@ -2,7 +2,7 @@ import "./menu.css";
 
 const Menu = ({ setTimeframes, timeframe }) => {
   return (
-    <aside className="menu">
+    <header className="menu">
       <figure className="profile-card">
         <img src="../../images/image-jeremy.png" alt="profile-picture" />
         <figcaption>
@@ -13,33 +13,35 @@ const Menu = ({ setTimeframes, timeframe }) => {
         </figcaption>
       </figure>
 
-      <section>
-        <button
-          className={`timeframe-toggle ${timeframe === 'daily' ? 'active' : ''}`}
-          onClick={() => {
-            setTimeframes("daily");
-          }}
-        >
-          Daily
-        </button>
-        <button
-          className={`timeframe-toggle ${timeframe === 'weekly' ? 'active' : ''}`}
-          onClick={() => {
-            setTimeframes("weekly");
-          }}
-        >
-          Weekly
-        </button>
-        <button
-          className={`timeframe-toggle ${timeframe === 'monthly' ? 'active' : ''} `}
-          onClick={() => {
-            setTimeframes("monthly");
-          }}
-        >
-          Monthly
-        </button>
-      </section>
-    </aside>
+      <nav aria-label="toggle-timeframe">
+        <ul>
+          <button
+            className={`timeframe-toggle ${timeframe === 'daily' ? 'active' : ''}`}
+            onClick={() => {
+              setTimeframes("daily");
+            }}
+          >
+            Daily
+          </button>
+          <button
+            className={`timeframe-toggle ${timeframe === 'weekly' ? 'active' : ''}`}
+            onClick={() => {
+              setTimeframes("weekly");
+            }}
+          >
+            Weekly
+          </button>
+          <button
+            className={`timeframe-toggle ${timeframe === 'monthly' ? 'active' : ''} `}
+            onClick={() => {
+              setTimeframes("monthly");
+            }}
+          >
+            Monthly
+          </button>
+        </ul>
+      </nav>
+    </header>
   );
 };
 

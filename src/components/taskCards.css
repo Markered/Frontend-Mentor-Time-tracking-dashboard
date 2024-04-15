@@ -16,9 +16,23 @@
   align-items: center;
 }
 
-.task-header img {
-  height: 0.22rem;
+.task-header button {
+  background-color: transparent;
+  border: none;
 }
+
+.task-header button svg path {
+  color: #BBC0FF;
+}
+
+.task-header button:hover {
+  cursor: pointer;
+}
+.task-header button:hover svg path {
+  color: white;
+  
+}
+
 .task-info {
   width: 100%;
   background-color: var(--dark-blue);
@@ -30,6 +44,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.task-info:hover {
+  background-color: var(--lighter-dark-blue);
+  cursor: pointer;
 }
 .task-title {
   font-size: 1rem;

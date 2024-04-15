@@ -38,7 +38,10 @@
   font-size: .8rem;
 }
 
-.menu section {
+.menu nav {
+  display: flex;
+}
+.menu nav ul {
   padding: 25px;
 }
 
@@ -83,7 +86,14 @@
     padding: 25px;
   }
 
-  .menu section {
+  .timeframe-toggle {
+    text-align: right;
+  }
+  
+  .menu nav {
+    flex-grow: 1;
+  }
+  .menu nav ul {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -98,6 +108,9 @@
     flex-direction: row;
   }
 
+  .timeframe-toggle {
+    text-align: right;
+  }
   .profile-name {
     font-size: 2rem;
   }
@@ -120,7 +133,7 @@
     width: 60px;
   }
 
-  .menu section {
+  .menu nav ul {
     padding: 0;
     display: flex;
     flex-direction: row;

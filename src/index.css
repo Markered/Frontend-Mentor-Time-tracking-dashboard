@@ -12,6 +12,7 @@
   /* Neutral Colors */
   --very-dark-blue: hsl(226, 43%, 10%); 
   --dark-blue: hsl(235, 46%, 20%);
+  --lighter-dark-blue: hsl(235, 46%, 30%);
   --desaturated-blue: hsl(235, 45%, 61%);
   --pale-blue: hsl(236, 100%, 87%); 
 }
