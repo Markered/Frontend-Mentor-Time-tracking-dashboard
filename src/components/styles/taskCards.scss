@@ -1,0 +1,93 @@
+.task-card {
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+
+  .task-icon {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .task-title {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+
+    svg path {
+      color: #BBC0FF;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      svg path {
+        color: white;
+      }
+    }
+  }
+}
+
+.task-info {
+  width: 100%;
+  background-color: var(--dark-blue);
+  position: absolute;
+  top: 20%;
+  bottom: 0;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: var(--lighter-dark-blue);
+    cursor: pointer;
+  }
+
+  .time {
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-between;
+    font-size: 3rem;
+
+    .previous-time {
+      display: block;
+      font-size: .8rem;
+      color: var(--desaturated-blue);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .task-info {
+    .time {
+      flex-direction: row;
+      font-size: 1.5rem;
+      align-items: center;
+  
+      .previous-time {
+        font-size: .8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .task-card {
+    height: 150px;
+  }
+}

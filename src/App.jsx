@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Menu from "./components/menu.jsx";
 import TaskCards from "./components/taskCards.jsx";
-import "./App.css";
+import './styles/Apps.css'
 
 function App() {
   const [timeframes, setTimeframes] = useState("daily");

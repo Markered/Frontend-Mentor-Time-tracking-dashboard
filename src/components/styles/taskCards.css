@@ -4,8 +4,7 @@
   position: relative;
   overflow: hidden;
 }
-
-.task-icon {
+.task-card .task-icon {
   position: absolute;
   right: 10px;
 }
@@ -15,22 +14,23 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.task-header .task-title {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+}
 .task-header button {
   background-color: transparent;
   border: none;
 }
-
 .task-header button svg path {
   color: #BBC0FF;
 }
-
 .task-header button:hover {
   cursor: pointer;
 }
 .task-header button:hover svg path {
   color: white;
-  
 }
 
 .task-info {
@@ -45,17 +45,11 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 .task-info:hover {
   background-color: var(--lighter-dark-blue);
   cursor: pointer;
 }
-.task-title {
-  font-size: 1rem;
-  font-weight: 500;
-  display: flex;
-}
-.time {
+.task-info .time {
   font-weight: 300;
   display: flex;
   flex-direction: column;
@@ -63,26 +57,24 @@
   justify-content: space-between;
   font-size: 3rem;
 }
-.previous-time {
+.task-info .time .previous-time {
   display: block;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--desaturated-blue);
 }
 
 @media screen and (max-width: 1000px) {
-  .time {
+  .task-info .time {
     flex-direction: row;
     font-size: 1.5rem;
     align-items: center;
   }
-
-  .previous-time {
-    font-size: .8rem;
+  .task-info .time .previous-time {
+    font-size: 0.8rem;
   }
 }
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 610px) {
   .task-card {
     height: 150px;
   }
-}
+}/*# sourceMappingURL=taskCards.css.map */

@@ -1,0 +1,40 @@
+$dashboard-max-width: 1200px;
+$dashboard-width: 90%;
+$dashboard-height: 500px;
+$dashboard-height-mobile: 600px;
+$dashboard-gap: 20px;
+$breakpoints: (
+  small: 610px,
+  medium: 900px,
+  large: 1000px
+);
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.dashboard {
+  height: $dashboard-height;
+  width: clamp($dashboard-width, $dashboard-width, $dashboard-max-width);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 10px;
+  gap: $dashboard-gap;
+
+  @media (max-width: map-get($breakpoints, large)) {
+    height: $dashboard-height-mobile;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (max-width: map-get($breakpoints, medium)) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  @media (max-width: map-get($breakpoints, small)) {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
