@@ -22,7 +22,7 @@ const TaskCards = ({ timeframe, tasks }) => {
           >
             <img
               className="task-icon"
-              src={`./images/icon-${task.title.replace(/\s+/g, "-")}.svg`}
+              src={`../../images/icon-${task.title.replace(/\s+/g, "-")}.svg`}
               alt=""
             />
             <div className="task-info">
@@ -33,7 +33,7 @@ const TaskCards = ({ timeframe, tasks }) => {
                     <path
                       d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
                       fill="currentColor"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                     />
                   </svg>
                 </button>

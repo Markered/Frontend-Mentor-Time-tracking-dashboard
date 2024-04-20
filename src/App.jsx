@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch('../data.json');
+        const response = await fetch('./data.json');
         const data = await response.json();
         setTasks(data);
       } catch (error) {
