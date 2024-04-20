@@ -1,0 +1,19 @@
+/* Colors */
+$blue: hsl(246, 80%, 60%);
+$very-dark-blue: hsl(226, 43%, 10%); 
+$dark-blue: hsl(235, 46%, 20%);
+$lighter-dark-blue: hsl(235, 46%, 30%);
+$desaturated-blue: hsl(235, 45%, 61%);
+$pale-blue: hsl(236, 100%, 87%); 
+
+/* Dashboard */
+$dashboard-max-width: 1200px;
+$dashboard-width: 90%;
+$dashboard-height: 500px;
+$dashboard-height-mobile: 600px;
+$dashboard-gap: 20px;
+$breakpoints: (
+  small: 610px,
+  medium: 900px,
+  large: 1000px
+);

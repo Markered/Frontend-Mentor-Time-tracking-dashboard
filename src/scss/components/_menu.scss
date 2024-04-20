@@ -1,19 +1,15 @@
 .menu {
-  background-color: var(--dark-blue);
+  @include FlexColumnBetween;
+  background-color: $dark-blue;
   border-radius: 10px;
   grid-row: 1/-1;
   grid-column: 1/2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   overflow: hidden;
 
   .profile-card {
+    @include FlexColumnBetween;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--blue);
+    background-color: $blue;
     flex-grow: 1;
     padding: 25px 25px 20% 25px;
     border-radius: 10px;
@@ -24,45 +20,45 @@
       border: 3px solid white;
       border-radius: 100%;
     }
+
+    figcaption .profile-name {
+      font-weight: 300;
+      font-size: 2.5rem;
+    
+      span {
+        display: block;
+        color: $pale-blue;
+        font-size: .8rem;
+      }
+    }    
   }
 
   nav {
     display: flex;
-  
+    
     ul {
       padding: 25px;
+
+      .timeframe-toggle {
+        color: $desaturated-blue;
+        text-align: start;
+        width: 100%;
+        font-size: 1rem;
+        height: 2rem;
+        display: block;
+        background-color: transparent;
+        border: none;
+      
+        &:hover {
+          color: white;
+          cursor: pointer;
+        }
+      
+        &.active {
+          color: white;
+        }
+      }
     }
-  }
-}
-
-.profile-name {
-  font-weight: 300;
-  font-size: 2.5rem;
-
-  span {
-    display: block;
-    color: var(--pale-blue);
-    font-size: .8rem;
-  }
-}
-
-.timeframe-toggle {
-  color: var(--desaturated-blue);
-  text-align: start;
-  width: 100%;
-  font-size: 1rem;
-  height: 2rem;
-  display: block;
-  background-color: transparent;
-  border: none;
-
-  &:hover {
-    color: white;
-    cursor: pointer;
-  }
-
-  &.active {
-    color: white;
   }
 }
 
@@ -73,11 +69,10 @@
     flex-direction: row;
 
     .profile-card {
-      flex-direction: row;
+      @include RowCenter;
       width: 70%;
       flex-grow: 0;
       justify-content: space-around;
-      align-items: center;
       padding: 25px;
     }
 
@@ -85,17 +80,14 @@
       flex-grow: 1;
 
       ul {
+        @include FlexColumnBetween;
         flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+
+        .timeframe-toggle {
+          text-align: right;
+        }
       }
     }
-  }
-  
-
-  .timeframe-toggle {
-    text-align: right;
   }
 }
 
@@ -114,7 +106,15 @@
     font-size: 2rem;
   }
 }
-
+@media screen and (max-width: 710px) {
+  .menu {
+    .profile-card {
+      figcaption .profile-name {
+        font-size: 2rem;
+      }
+    }
+  }
+}
 @media screen and (max-width: 610px) {
   .menu {
     height: 150px;
@@ -130,26 +130,31 @@
         height: 60px;
         width: 60px;
       }
+
+      figcaption .profile-name {
+        font-size: 1.2rem;
+      }
     }
     nav ul {
       padding: 0;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-  
-  .timeframe-toggle {
-    text-align: center;
-  }
+      @include RowCenter;
 
-  .profile-name {
-    font-size: 1.2rem;
+      .timeframe-toggle {
+        text-align: center;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 450px) and (max-width: 610px) {
-  .profile-name {
-    font-size: 1.5rem;
+  .menu {
+    .profile-card {
+      figcaption {
+        .profile-name {
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 }

@@ -1,5 +1,3 @@
-import "./styles/menu.css";
-
 const Menu = ({ setTimeframes, timeframe }) => {
   return (
     <header className="menu">

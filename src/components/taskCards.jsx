@@ -1,5 +1,13 @@
-import "./styles/taskCards.css";
 const TaskCards = ({ timeframe, tasks }) => {
+  const taskBgColors = {
+    work: "hsl(15, 100%, 70%)",
+    play: "hsl(195, 74%, 62%)",
+    study: "hsl(348, 100%, 68%)",
+    exercise: "hsl(145, 58%, 55%)",
+    social: "hsl(264, 64%, 52%)",
+    "self-care": "hsl(43, 84%, 65%)"
+  }
+
   return (
     <>
       {tasks.map((task, index) => {
@@ -9,8 +17,8 @@ const TaskCards = ({ timeframe, tasks }) => {
         return (
           <article
             key={index + 1}
-            className="task-card"
-            style={{ backgroundColor: `var(--${normalizedTaskName}` }}
+            className={`task-card`}
+            style={{ backgroundColor: taskBgColors[normalizedTaskName] }}
           >
             <img
               className="task-icon"

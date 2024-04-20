@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+/* Colors */
+/* Dashboard */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: Rubik;
+  background-color: hsl(226, 43%, 10%);
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (max-width: 610px) {
+  #root {
+    height: auto;
+    width: auto;
+    justify-content: center;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.dashboard {
+  height: 500px;
+  width: clamp(90%, 90%, 1200px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 10px;
+  gap: 20px;
+}
+@media (max-width: 1000px) {
+  .dashboard {
+    height: 600px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+@media (max-width: 610px) {
+  .dashboard {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 10px;
+  grid-row: 1/-1;
+  grid-column: 1/2;
+  overflow: hidden;
+}
+.menu .profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: hsl(246, 80%, 60%);
+  flex-grow: 1;
+  padding: 25px 25px 20% 25px;
+  border-radius: 10px;
+}
+.menu .profile-card img {
+  width: 75px;
+  height: 75px;
+  border: 3px solid white;
+  border-radius: 100%;
+}
+.menu .profile-card figcaption .profile-name {
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+.menu .profile-card figcaption .profile-name span {
+  display: block;
+  color: hsl(236, 100%, 87%);
+  font-size: 0.8rem;
+}
+.menu nav {
+  display: flex;
+}
+.menu nav ul {
+  padding: 25px;
+}
+.menu nav ul .timeframe-toggle {
+  color: hsl(235, 45%, 61%);
+  text-align: start;
+  width: 100%;
+  font-size: 1rem;
+  height: 2rem;
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+.menu nav ul .timeframe-toggle:hover {
+  color: white;
+  cursor: pointer;
+}
+.menu nav ul .timeframe-toggle.active {
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .menu {
+    grid-row: 1;
+    grid-column: 1/span 3;
+    flex-direction: row;
+  }
+  .menu .profile-card {
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    flex-grow: 0;
+    justify-content: space-around;
+    padding: 25px;
+  }
+  .menu nav {
+    flex-grow: 1;
+  }
+  .menu nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .menu nav ul .timeframe-toggle {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 900px) {
+  .menu {
+    grid-row: 1;
+    grid-column: 1/span 2;
+    flex-direction: row;
+  }
+  .timeframe-toggle {
+    text-align: right;
+  }
+  .profile-name {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 710px) {
+  .menu .profile-card figcaption .profile-name {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .menu {
+    height: 150px;
+    grid-row: 1;
+    grid-column: 1;
+    flex-direction: column;
+  }
+  .menu .profile-card {
+    padding: 25px;
+    width: 100%;
+    height: 70%;
+  }
+  .menu .profile-card img {
+    height: 60px;
+    width: 60px;
+  }
+  .menu .profile-card figcaption .profile-name {
+    font-size: 1.2rem;
+  }
+  .menu nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .menu nav ul .timeframe-toggle {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 450px) and (max-width: 610px) {
+  .menu .profile-card figcaption .profile-name {
+    font-size: 1.5rem;
+  }
+}
+.task-card {
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.task-card .task-icon {
+  position: absolute;
+  right: 10px;
+}
+.task-card .task-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: hsl(235, 46%, 20%);
+  position: absolute;
+  top: 20%;
+  bottom: 0;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+}
+.task-card .task-info:hover {
+  background-color: hsl(235, 46%, 30%);
+  cursor: pointer;
+}
+.task-card .task-info .task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-card .task-info .task-header .task-title {
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+}
+.task-card .task-info .task-header button {
+  background-color: transparent;
+  border: none;
+}
+.task-card .task-info .task-header button svg path {
+  color: #BBC0FF;
+}
+.task-card .task-info .task-header button:hover {
+  cursor: pointer;
+}
+.task-card .task-info .task-header button:hover svg path {
+  color: white;
+}
+.task-card .task-info .time {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 300;
+  height: 70%;
+  font-size: 3rem;
+}
+.task-card .task-info .time .previous-time {
+  display: block;
+  font-size: 0.8rem;
+  color: hsl(235, 45%, 61%);
+}
+
+@media screen and (max-width: 1000px) {
+  .task-card .task-info .time {
+    flex-direction: row;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  .task-card .task-info .time .previous-time {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .task-card {
+    height: 150px;
+  }
+}/*# sourceMappingURL=main.css.map */
