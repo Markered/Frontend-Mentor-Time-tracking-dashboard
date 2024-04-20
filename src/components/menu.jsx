@@ -2,7 +2,7 @@ const Menu = ({ setTimeframes, timeframe }) => {
   return (
     <header className="menu">
       <figure className="profile-card">
-        <img src="../../images/image-jeremy.png" alt="profile-picture" />
+        <img src="./images/image-jeremy.png" alt="profile-picture" />
         <figcaption>
           <h1 className="profile-name">
             <span>Report for</span>

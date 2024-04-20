@@ -22,7 +22,7 @@ const TaskCards = ({ timeframe, tasks }) => {
           >
             <img
               className="task-icon"
-              src={`../../images/icon-${task.title.replace(/\s+/g, "-")}.svg`}
+              src={`./images/icon-${task.title.replace(/\s+/g, "-")}.svg`}
               alt=""
             />
             <div className="task-info">
